@@ -1,5 +1,8 @@
 package agency.amazon.test.model;
 
+import lombok.Data;
+
+@Data
 public class SalesByDate {
     private AmountAndCurrency orderedProductSales;
     private AmountAndCurrency orderedProductSalesB2B;

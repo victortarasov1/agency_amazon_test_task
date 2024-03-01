@@ -1,5 +1,8 @@
 package agency.amazon.test.model;
 
+import lombok.Data;
+
+@Data
 public class SalesByAsin {
     private int unitsOrdered;
     private int unitsOrderedB2B;

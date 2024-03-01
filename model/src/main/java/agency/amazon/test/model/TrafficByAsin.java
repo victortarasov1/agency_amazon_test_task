@@ -1,5 +1,8 @@
 package agency.amazon.test.model;
 
+import lombok.Data;
+
+@Data
 public class TrafficByAsin {
     private int browserSessions;
     private int browserSessionsB2B;
