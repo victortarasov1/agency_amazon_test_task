@@ -1,5 +1,5 @@
 dependencies {
-    implementation(project(":repository"))
+    implementation(project(":service"))
     implementation(project(":model"))
     implementation(project(":security"))
 }
