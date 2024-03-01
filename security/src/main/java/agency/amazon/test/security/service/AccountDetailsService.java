@@ -13,6 +13,6 @@ public class AccountDetailsService implements UserDetailsService {
     private final AccountDetailsRepository repository;
     @Override
     public UserDetails loadUserByUsername(String username) {
-        return repository.findById(username).orElseThrow(() -> new UserNotFoundException(username));
+        return repository.findByEmail(username).orElseThrow(() -> new UserNotFoundException(username));
     }
 }
