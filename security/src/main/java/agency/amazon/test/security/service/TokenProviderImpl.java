@@ -25,8 +25,8 @@ public class TokenProviderImpl implements TokenProvider {
     private final UserDetailsService service;
     private final ConfigHolder holder;
 
-    private static final String ACCESS_TOKEN = "access_token";
-    private static final String REFRESH_TOKEN = "refresh_token";
+    static final String ACCESS_TOKEN = "access_token";
+    static final String REFRESH_TOKEN = "refresh_token";
     @Override
     public Map<String, String> generateTokens(UserDetails details) {
         return Map.of(ACCESS_TOKEN, generateAccessToken(details),
