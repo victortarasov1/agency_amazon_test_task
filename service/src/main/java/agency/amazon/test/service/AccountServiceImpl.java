@@ -29,7 +29,7 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public AccountDto getAccount(String email) {
-        return accountRepository.findById(email).map(AccountDto::new)
+        return accountRepository.findByEmail(email).map(AccountDto::new)
                 .orElseThrow(() -> new AccountNotFoundException(email));
     }
 }
