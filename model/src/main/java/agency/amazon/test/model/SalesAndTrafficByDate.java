@@ -10,6 +10,7 @@ import java.time.LocalDate;
 @Document
 public class SalesAndTrafficByDate {
     @Id
+    private String id;
     private LocalDate date;
     private SalesByDate salesByDate;
     private TrafficByDate trafficByDate;
