@@ -1,5 +1,6 @@
 package agency.amazon.test.model;
 
+import lombok.EqualsAndHashCode;
 import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -9,6 +10,7 @@ import java.util.Collection;
 import java.util.List;
 
 @Setter
+@EqualsAndHashCode(of = "email")
 public class AccountDetails implements UserDetails {
 
     private String email;
