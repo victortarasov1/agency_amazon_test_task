@@ -5,7 +5,7 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @Getter
-public enum Claim {
+public enum TokenClaim {
     ROLES("roles");
     private final String claim;
 }

@@ -1,6 +1,5 @@
 package agency.amazon.test.security.service;
 
-import agency.amazon.test.model.AccountDetails;
 import agency.amazon.test.security.dto.ConfigHolder;
 import agency.amazon.test.security.exception.authentication.UserNotFoundException;
 import agency.amazon.test.security.exception.authorization.BadTokenException;
@@ -57,7 +56,7 @@ public class TokenProviderImpl implements TokenProvider {
         var instant = Instant.now();
         return JWT.create().withSubject(user.getUsername())
                 .withExpiresAt(instant.plus(holder.getAccessTokenTime(), ChronoUnit.MINUTES))
-                .withClaim(Claim.ROLES.getClaim(), user.getAuthorities().stream()
+                .withClaim(TokenClaim.ROLES.getClaim(), user.getAuthorities().stream()
                         .map(GrantedAuthority::getAuthority).toList()).sign(algorithm);
     }
 }

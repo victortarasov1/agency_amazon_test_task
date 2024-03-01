@@ -22,7 +22,7 @@ public class AuthorizationServiceImpl implements AuthorizationService {
         try {
             var decodedJWT = verifier.verify(accessToken);
             var username = decodedJWT.getSubject();
-            var roles = decodedJWT.getClaim(Claim.ROLES.getClaim()).asArray(String.class);
+            var roles = decodedJWT.getClaim(TokenClaim.ROLES.getClaim()).asArray(String.class);
             var authorities = stream(roles).map(SimpleGrantedAuthority::new).toList();
             var authenticationToken = new UsernamePasswordAuthenticationToken(username, null, authorities);
             SecurityContextHolder.getContext().setAuthentication(authenticationToken);
