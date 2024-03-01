@@ -35,6 +35,9 @@ allprojects {
 		testImplementation("org.springframework.security:spring-security-test")
 		compileOnly("org.projectlombok:lombok")
 		annotationProcessor("org.projectlombok:lombok")
+		testImplementation("org.mockito:mockito-core:5.10.0")
+		testImplementation("org.assertj:assertj-core:3.25.3")
+
 	}
 	tasks.bootJar {
 		enabled = false
