@@ -16,7 +16,7 @@ import static agency.amazon.test.security.filter.AuthorizationType.BEARER;
 import static org.springframework.http.HttpHeaders.AUTHORIZATION;
 
 @Component
-@Order(2)
+@Order(3)
 @RequiredArgsConstructor
 public class AuthorizationFilter extends OncePerRequestFilter {
     private final AuthorizationService service;

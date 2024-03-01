@@ -27,7 +27,7 @@ class AccountDetailsServiceTest {
     @Test
     void testLoadUserByUsername() {
         var details = new AccountDetails("email@gmail.com", "root");
-        when(repository.findById(anyString())).thenReturn(Optional.of(details));
+        when(repository.findByEmail(anyString())).thenReturn(Optional.of(details));
         var result = service.loadUserByUsername(details.getUsername());
         assertNotNull(result);
         assertEquals(details, result);
@@ -35,7 +35,7 @@ class AccountDetailsServiceTest {
 
     @Test
     void testLoadUserByUsername_shouldThrowUserNotFoundException() {
-        when(repository.findById(anyString())).thenReturn(Optional.empty());
+        when(repository.findByEmail(anyString())).thenReturn(Optional.empty());
         assertThatThrownBy(() -> service.loadUserByUsername("some mail"))
                 .isInstanceOf(UserNotFoundException.class);
     }

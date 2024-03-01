@@ -19,7 +19,7 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 
 @Component
-@Order(3)
+@Order(2)
 @RequiredArgsConstructor
 public class RefreshTokenFilter extends OncePerRequestFilter {
     private final TokenProvider provider;
