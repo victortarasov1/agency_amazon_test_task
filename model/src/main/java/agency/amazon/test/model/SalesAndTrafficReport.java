@@ -2,9 +2,11 @@ package agency.amazon.test.model;
 
 import lombok.Data;
 
+import java.util.List;
+
 @Data
 public class SalesAndTrafficReport {
     private ReportSpecification reportSpecification;
-    private SalesAndTrafficByDate salesAndTrafficByDate;
-    private SalesAndTrafficByAsin salesAndTrafficByAsin;
+    private List<SalesAndTrafficByDate> salesAndTrafficByDate;
+    private List<SalesAndTrafficByAsin> salesAndTrafficByAsin;
 }

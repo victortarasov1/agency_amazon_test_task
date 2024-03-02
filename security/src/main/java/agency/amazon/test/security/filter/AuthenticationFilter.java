@@ -44,7 +44,7 @@ public class AuthenticationFilter extends OncePerRequestFilter {
             response.setContentType(APPLICATION_JSON_VALUE);
             mapper.writeValue(response.getOutputStream(), tokens);
         }
-        filterChain.doFilter(request, response);
+        else filterChain.doFilter(request, response);
     }
 
     private Map<String, String> authenticate(HttpServletRequest request) {
