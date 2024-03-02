@@ -19,7 +19,7 @@ public class AccountServiceImpl implements AccountService {
     @Override
     public void addAccount(AccountWithDetailsDto dto) {
         if(accountRepository.findByEmail(dto.email()).isEmpty()) {
-            accountRepository.save(new Account(dto.email(), dto.name(), dto.surname(), encoder.encode(dto.password())));
+            accountRepository.save(new Account(dto.email(),encoder.encode(dto.password()), dto.name(), dto.surname()));
         } else throw new AccountAlreadyExistException(dto.email());
     }
 
