@@ -32,9 +32,9 @@ public class AuthenticationFilter extends OncePerRequestFilter {
     private final ObjectMapper mapper;
     private final AuthenticationManager manager;
 
-    private static final String EMAIL_PARAM = "email";
-    private static final String PASSWORD_PARAM = "password";
-    private static final String LOGIN_URI = "/login";
+    static final String EMAIL_PARAM = "email";
+    static final String PASSWORD_PARAM = "password";
+    static final String LOGIN_URI = "/login";
 
 
     @Override
