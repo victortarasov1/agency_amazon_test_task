@@ -5,7 +5,7 @@ import lombok.Data;
 import java.math.BigDecimal;
 
 @Data
-public class TrafficByAsin {
+public class Traffic {
     private int browserSessions;
     private int browserSessionsB2B;
     private int mobileAppSessions;
@@ -34,4 +34,11 @@ public class TrafficByAsin {
     private BigDecimal buyBoxPercentageB2B;
     private BigDecimal unitSessionPercentage;
     private BigDecimal unitSessionPercentageB2B;
+    private BigDecimal orderItemSessionPercentage;
+    private BigDecimal orderItemSessionPercentageB2B;
+    private int averageOfferCount;
+    private int averageParentItems;
+    private int feedbackReceived;
+    private int negativeFeedbackReceived;
+    private int receivedNegativeFeedbackRate;
 }
