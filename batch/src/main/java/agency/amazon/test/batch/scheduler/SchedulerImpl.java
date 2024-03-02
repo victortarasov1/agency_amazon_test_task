@@ -15,7 +15,7 @@ public class SchedulerImpl implements Scheduler {
     private final BatchProcessor processor;
 
     @Override
-    @Scheduled(fixedDelay = 1, timeUnit = TimeUnit.MINUTES)
+    @Scheduled(fixedDelay = 10, timeUnit = TimeUnit.MINUTES)
     public void run() {
         processor.process();
     }
