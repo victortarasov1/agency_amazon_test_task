@@ -5,7 +5,7 @@ import lombok.Data;
 import java.math.BigDecimal;
 
 @Data
-public class SalesByDate {
+public class Sales {
     private AmountAndCurrency orderedProductSales;
     private AmountAndCurrency orderedProductSalesB2B;
     private int unitsOrdered;
@@ -25,7 +25,4 @@ public class SalesByDate {
     private AmountAndCurrency shippedProductSales;
     private int unitsShipped;
     private int ordersShipped;
-
-
-
 }

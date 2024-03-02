@@ -9,6 +9,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class SalesAndTrafficByAsin {
     @Id
     private String parentAsin;
-    private SalesByAsin salesByAsin;
-    private TrafficByAsin trafficByAsin;
+    private Sales salesByAsin;
+    private Traffic trafficByAsin;
 }

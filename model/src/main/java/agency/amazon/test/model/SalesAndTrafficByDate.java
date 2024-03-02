@@ -12,6 +12,6 @@ public class SalesAndTrafficByDate {
     @Id
     private String id;
     private LocalDate date;
-    private SalesByDate salesByDate;
-    private TrafficByDate trafficByDate;
+    private Sales salesByDate;
+    private Traffic trafficByDate;
 }
