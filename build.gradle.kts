@@ -33,6 +33,7 @@ allprojects {
 		implementation("org.springframework.boot:spring-boot-starter-web")
 		testImplementation("org.springframework.boot:spring-boot-starter-test")
 		testImplementation("org.springframework.security:spring-security-test")
+		implementation("org.springframework.boot:spring-boot-starter-cache")
 		compileOnly("org.projectlombok:lombok")
 		annotationProcessor("org.projectlombok:lombok")
 		testImplementation("org.mockito:mockito-core:5.10.0")
