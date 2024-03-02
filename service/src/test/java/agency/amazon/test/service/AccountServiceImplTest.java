@@ -5,8 +5,6 @@ import agency.amazon.test.dto.AccountWithDetailsDto;
 import agency.amazon.test.exception.AccountAlreadyExistException;
 import agency.amazon.test.exception.AccountNotFoundException;
 import agency.amazon.test.model.Account;
-import agency.amazon.test.model.AccountDetails;
-import agency.amazon.test.repository.AccountDetailsRepository;
 import agency.amazon.test.repository.AccountRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -27,9 +25,8 @@ class AccountServiceImplTest {
     @BeforeEach
     public void setUp() {
         accountRepository = mock(AccountRepository.class);
-        AccountDetailsRepository accountDetailsRepository = mock(AccountDetailsRepository.class);
         encoder = mock(PasswordEncoder.class);
-        service = new AccountServiceImpl(accountRepository, accountDetailsRepository, encoder);
+        service = new AccountServiceImpl(accountRepository, encoder);
     }
 
     @Test
@@ -43,7 +40,7 @@ class AccountServiceImplTest {
     @Test
     public void addAccount_shouldThrowAccountAlreadyExistException() {
         var dto = new AccountWithDetailsDto("some email", "some name", "some surname", "some password");
-        var account = new Account("some email", "some name", "some surname", new AccountDetails("some email", "some password"));
+        var account = new Account(dto.email(), dto.password(), dto.name(), dto.surname());
         when(accountRepository.findByEmail(anyString())).thenReturn(Optional.of(account));
         assertThatThrownBy(() -> service.addAccount(dto))
                 .isInstanceOf(AccountAlreadyExistException.class);
@@ -52,8 +49,9 @@ class AccountServiceImplTest {
     @Test
     public void getAccount() {
         var email = "some email";
-        var dto = new AccountDto("some email", "some name", "some surname");
-        var account = new Account("some email", "some name", "some surname", new AccountDetails("some email", "some password"));
+        var account = new Account("some email", "some password", "some name", "some surname");
+        var dto = new AccountDto(account.getEmail(), account.getName(), account.getSurname());
+        
         when(accountRepository.findByEmail(anyString())).thenReturn(Optional.of(account));
         var result = service.getAccount(email);
         assertEquals(result, dto);
