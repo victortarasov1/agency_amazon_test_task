@@ -9,6 +9,7 @@ import agency.amazon.test.model.AccountDetails;
 import agency.amazon.test.repository.AccountDetailsRepository;
 import agency.amazon.test.repository.AccountRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -28,6 +29,7 @@ public class AccountServiceImpl implements AccountService {
     }
 
     @Override
+    @Cacheable(value = "account", key = "#email")
     public AccountDto getAccount(String email) {
         return accountRepository.findByEmail(email).map(AccountDto::new)
                 .orElseThrow(() -> new AccountNotFoundException(email));
