@@ -32,7 +32,7 @@ public class SalesAndTrafficByDateServiceImpl implements SalesAndTrafficService 
     }
 
     @Override
-    @Cacheable(value = "salesAndTraffic", key = "'findAll'")
+    @Cacheable(value = "salesAndTraffic", key = "'findAllData'")
     public List<SalesAndTraffic> findAll() {
         return repository.findAll().stream().filter(this::isDateReport).toList();
     }
