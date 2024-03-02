@@ -1,15 +1,16 @@
 package agency.amazon.test.service;
 
-import agency.amazon.test.dto.StatisticsReportDto;
+import agency.amazon.test.model.SalesAndTraffic;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public interface SalesAndTrafficByDateService {
-    StatisticsReportDto findByDate(LocalDate date);
+    List<SalesAndTraffic> findByDate(LocalDate date);
 
-    StatisticsReportDto findByDateRange(LocalDate startDate, LocalDate endDate);
+    List<SalesAndTraffic> findByDateRange(LocalDate startDate, LocalDate endDate);
 
-    StatisticsReportDto findAll();
+    List<SalesAndTraffic> findAll();
 
 
 }

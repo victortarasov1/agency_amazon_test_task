@@ -1,53 +1,42 @@
 package agency.amazon.test.service;
 
-import agency.amazon.test.dto.StatisticsReportDto;
+import agency.amazon.test.model.SalesAndTraffic;
+import agency.amazon.test.repository.SalesAndTrafficRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
 public class SalesAndTrafficByDateServiceImpl implements SalesAndTrafficByDateService {
+
+    private final SalesAndTrafficRepository repository;
+
     @Override
-    public StatisticsReportDto findByDate(LocalDate date) {
-        return null;
+    public List<SalesAndTraffic> findByDate(LocalDate date){
+        return repository.findById(date.toString()).map(List::of).orElseGet(List::of);
     }
 
     @Override
-    public StatisticsReportDto findByDateRange(LocalDate startDate, LocalDate endDate) {
-        return null;
+    public List<SalesAndTraffic> findByDateRange(LocalDate startDate, LocalDate endDate) {
+        var dates = startDate.datesUntil(endDate.plusDays(1)).map(LocalDate::toString).toList();
+        return repository.findAllById(dates);
     }
 
     @Override
-    public StatisticsReportDto findAll() {
-        return null;
+    public List<SalesAndTraffic> findAll() {
+        return repository.findAll().stream().filter(this::isDateReport).toList();
     }
-//    private final SalesAndTrafficByDateRepository repository;
-//
-//    @Override
-//    public StatisticsReportDto findByDate(LocalDate date) {
-//        var salesAndTraffic = repository.findByDate(date).orElseGet(SalesAndTrafficByDate::new);
-//        var dto = new StatisticsReportDto();
-//        dto.setStatisticsByDate(List.of(salesAndTraffic));
-//        return dto;
-//    }
-//
-//    @Override
-//    public StatisticsReportDto findByDateRange(LocalDate startDate, LocalDate endDate) {
-//        var salesAndTraffics = repository.findByDateBetween(startDate, endDate);
-//        var dto = new StatisticsReportDto();
-//        dto.setStatisticsByDate(salesAndTraffics);
-//        return dto;
-//    }
-//
-//    @Override
-//    public StatisticsReportDto findAll() {
-//        var salesAndTraffics = repository.findAll();
-//        var dto = new StatisticsReportDto();
-//        dto.setStatisticsByDate(salesAndTraffics);
-//        return dto;
-//    }
 
-
+    private boolean isDateReport(SalesAndTraffic salesAndTraffic) {
+        try {
+            LocalDate.parse(salesAndTraffic.getId());
+            return true;
+        } catch (DateTimeParseException ex) {
+            return false;
+        }
+    }
 }
