@@ -3,6 +3,7 @@ package agency.amazon.test.service.report;
 import agency.amazon.test.model.SalesAndTraffic;
 import agency.amazon.test.repository.SalesAndTrafficRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -16,11 +17,13 @@ public class SalesAndTrafficByDateServiceImpl implements SalesAndTrafficService 
     private final SalesAndTrafficRepository repository;
 
     @Override
+    @Cacheable(value = "salesAndTraffic", key = "#date")
     public SalesAndTraffic findById(String date){
         return repository.findById(date).orElseGet(SalesAndTraffic::new);
     }
 
     @Override
+    @Cacheable(value = "salesAndTraffic", key = "#dateRange")
     public List<SalesAndTraffic> findAllById(List<String> dateRange) {
         var startDate = LocalDate.parse(dateRange.get(0));
         var endDate = LocalDate.parse(dateRange.get(dateRange.size() -1));
@@ -29,6 +32,7 @@ public class SalesAndTrafficByDateServiceImpl implements SalesAndTrafficService 
     }
 
     @Override
+    @Cacheable(value = "salesAndTraffic", key = "'findAll'")
     public List<SalesAndTraffic> findAll() {
         return repository.findAll().stream().filter(this::isDateReport).toList();
     }
