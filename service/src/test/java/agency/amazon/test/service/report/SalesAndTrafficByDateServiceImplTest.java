@@ -20,7 +20,7 @@ class SalesAndTrafficByDateServiceImplTest {
     @BeforeEach()
     public void setUp(){
         repository = mock(SalesAndTrafficRepository.class);
-        service = new SalesAndTrafficByAsinServiceImpl(repository);
+        service = new SalesAndTrafficByDateServiceImpl(repository);
     }
     @Test
     void findById() {
