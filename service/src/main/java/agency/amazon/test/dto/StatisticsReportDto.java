@@ -1,10 +1,6 @@
 package agency.amazon.test.dto;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import java.util.List;
 
-@Data
-@NoArgsConstructor
-public class StatisticsReportDto {
-
+public record StatisticsReportDto(String type, List<String> data) {
 }
