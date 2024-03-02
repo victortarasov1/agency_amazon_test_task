@@ -1,17 +1,16 @@
 package agency.amazon.test.model;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.time.LocalDate;
-
 @Data
 @Document
-public class SalesAndTrafficByDate {
+public class SalesAndTraffic {
     @Id
+    @JsonAlias({"date", "parentAsin"})
     private String id;
-    private LocalDate date;
-    private Sales salesByDate;
-    private Traffic trafficByDate;
+    private Sales salesByAsin;
+    private Traffic trafficByAsin;
 }
