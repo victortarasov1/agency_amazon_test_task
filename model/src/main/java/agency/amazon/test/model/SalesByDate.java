@@ -2,6 +2,8 @@ package agency.amazon.test.model;
 
 import lombok.Data;
 
+import java.math.BigDecimal;
+
 @Data
 public class SalesByDate {
     private AmountAndCurrency orderedProductSales;
@@ -12,12 +14,12 @@ public class SalesByDate {
     private int totalOrderItemsB2B;
     private AmountAndCurrency averageSalesPerOrderItem;
     private AmountAndCurrency averageSalesPerOrderItemB2B;
-    private double averageUnitsPerOrderItem;
-    private double averageUnitsPerOrderItemB2B;
+    private BigDecimal averageUnitsPerOrderItem;
+    private BigDecimal averageUnitsPerOrderItemB2B;
     private AmountAndCurrency averageSellingPrice;
     private AmountAndCurrency averageSellingPriceB2B;
     private int unitsRefunded;
-    private double refundRate;
+    private BigDecimal refundRate;
     private int claimsGranted;
     private AmountAndCurrency claimsAmount;
     private AmountAndCurrency shippedProductSales;
