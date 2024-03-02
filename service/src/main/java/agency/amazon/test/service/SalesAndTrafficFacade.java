@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface SalesAndTrafficFacade {
 
-    List<SalesAndTraffic> findById(StatisticsReportDto dto);
+    SalesAndTraffic findById(StatisticsReportDto dto);
     List<SalesAndTraffic> findAllById(StatisticsReportDto dto);
     List<SalesAndTraffic> findAll(StatisticsReportDto dto);
 }

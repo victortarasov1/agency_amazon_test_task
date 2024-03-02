@@ -16,8 +16,8 @@ public class SalesAndTrafficByDateServiceImpl implements SalesAndTrafficService 
     private final SalesAndTrafficRepository repository;
 
     @Override
-    public List<SalesAndTraffic> findById(String date){
-        return repository.findById(date).map(List::of).orElseGet(List::of);
+    public SalesAndTraffic findById(String date){
+        return repository.findById(date).orElseGet(SalesAndTraffic::new);
     }
 
     @Override

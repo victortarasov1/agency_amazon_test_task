@@ -13,8 +13,8 @@ import java.util.List;
 public class SalesAndTrafficByAsinServiceImpl implements SalesAndTrafficService {
     private final SalesAndTrafficRepository repository;
     @Override
-    public List<SalesAndTraffic> findById(String asin) {
-        return repository.findById(asin).map(List::of).orElseGet(List::of);
+    public SalesAndTraffic findById(String asin) {
+        return repository.findById(asin).orElseGet(SalesAndTraffic::new);
     }
 
     @Override
