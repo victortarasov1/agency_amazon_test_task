@@ -1,6 +1,6 @@
 package agency.amazon.test.security.service;
 
-import agency.amazon.test.repository.AccountDetailsRepository;
+import agency.amazon.test.repository.AccountRepository;
 import agency.amazon.test.security.exception.authentication.UserNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 @Component
 @RequiredArgsConstructor
 public class AccountDetailsService implements UserDetailsService {
-    private final AccountDetailsRepository repository;
+    private final AccountRepository repository;
     @Override
     public UserDetails loadUserByUsername(String username) {
         return repository.findByEmail(username).orElseThrow(() -> new UserNotFoundException(username));

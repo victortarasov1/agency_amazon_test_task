@@ -1,10 +1,11 @@
 package agency.amazon.test.security.service;
 
-import agency.amazon.test.model.AccountDetails;
-import agency.amazon.test.repository.AccountDetailsRepository;
+import agency.amazon.test.model.Account;
+import agency.amazon.test.repository.AccountRepository;
 import agency.amazon.test.security.exception.authentication.UserNotFoundException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
 import java.util.Optional;
@@ -16,17 +17,17 @@ import static org.mockito.Mockito.*;
 
 class AccountDetailsServiceTest {
     private UserDetailsService service;
-    private AccountDetailsRepository repository;
+    private AccountRepository repository;
 
     @BeforeEach
     public void setUp() {
-        repository = mock(AccountDetailsRepository.class);
+        repository = mock(AccountRepository.class);
         service = new AccountDetailsService(repository);
     }
 
     @Test
     void testLoadUserByUsername() {
-        var details = new AccountDetails("email@gmail.com", "root");
+        var details = new Account("email@gmail.com", "root", "name", "surname");
         when(repository.findByEmail(anyString())).thenReturn(Optional.of(details));
         var result = service.loadUserByUsername(details.getUsername());
         assertNotNull(result);
