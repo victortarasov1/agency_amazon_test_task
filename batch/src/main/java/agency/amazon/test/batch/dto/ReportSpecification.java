@@ -1,4 +1,4 @@
-package agency.amazon.test.model;
+package agency.amazon.test.batch.dto;
 
 import lombok.Data;
 
