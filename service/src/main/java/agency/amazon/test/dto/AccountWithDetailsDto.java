@@ -1,4 +1,12 @@
 package agency.amazon.test.dto;
 
-public record AccountWithDetailsDto(String email, String name, String surname, String password) {
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+
+public record AccountWithDetailsDto(
+        @NotNull @NotEmpty @Email String email,
+        @NotNull @NotEmpty String name,
+        @NotNull @NotEmpty String surname,
+        @NotNull @NotEmpty String password) {
 }
