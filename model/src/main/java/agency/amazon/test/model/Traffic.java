@@ -8,24 +8,24 @@ import java.math.BigDecimal;
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Traffic {
-    private int browserSessions;
-    private int browserSessionsB2B;
-    private int mobileAppSessions;
-    private int mobileAppSessionsB2B;
-    private int sessions;
-    private int sessionsB2B;
+    private Integer browserSessions;
+    private Integer browserSessionsB2B;
+    private Integer mobileAppSessions;
+    private Integer mobileAppSessionsB2B;
+    private Integer sessions;
+    private Integer sessionsB2B;
     private BigDecimal browserSessionPercentage;
     private BigDecimal browserSessionPercentageB2B;
     private BigDecimal mobileAppSessionPercentage;
     private BigDecimal mobileAppSessionPercentageB2B;
     private BigDecimal sessionPercentage;
     private BigDecimal sessionPercentageB2B;
-    private int browserPageViews;
-    private int browserPageViewsB2B;
-    private int mobileAppPageViews;
-    private int mobileAppPageViewsB2B;
-    private int pageViews;
-    private int pageViewsB2B;
+    private Integer browserPageViews;
+    private Integer browserPageViewsB2B;
+    private Integer mobileAppPageViews;
+    private Integer mobileAppPageViewsB2B;
+    private Integer pageViews;
+    private Integer pageViewsB2B;
     private BigDecimal browserPageViewsPercentage;
     private BigDecimal browserPageViewsPercentageB2B;
     private BigDecimal mobileAppPageViewsPercentage;
@@ -38,9 +38,9 @@ public class Traffic {
     private BigDecimal unitSessionPercentageB2B;
     private BigDecimal orderItemSessionPercentage;
     private BigDecimal orderItemSessionPercentageB2B;
-    private int averageOfferCount;
-    private int averageParentItems;
-    private int feedbackReceived;
-    private int negativeFeedbackReceived;
-    private int receivedNegativeFeedbackRate;
+    private Integer averageOfferCount;
+    private Integer averageParentItems;
+    private Integer feedbackReceived;
+    private Integer negativeFeedbackReceived;
+    private Integer receivedNegativeFeedbackRate;
 }
