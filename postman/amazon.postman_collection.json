@@ -363,6 +363,75 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "update account",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aWt0b3IxQGdtYWlsLmNvbSIsImV4cCI6MTcwOTQwNDM0MCwicm9sZXMiOlsiUk9MRV9VU0VSIl19.yzC_Jd7yYTjWeQyLSZCCdKMLD3O_c271qP4gn2OZUeQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\" : \"Viktor\",\n    \"surname\": \"Tarasov\",\n    \"email\": \"viktor@gmail.com\",\n    \"password\": \"111\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/account/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"account",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete account",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aWt0b3JAZ21haWwuY29tIiwiZXhwIjoxNzA5NDA0Mzg3LCJyb2xlcyI6WyJST0xFX1VTRVIiXX0.KgvUwsqSXJgYEPJYUH8Nd2hz0BpbRAuWnIW-ooa3AoY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/account/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"account",
+						"delete"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
