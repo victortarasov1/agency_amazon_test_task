@@ -1,7 +1,7 @@
 package agency.amazon.test.batch.writer;
 
 import agency.amazon.test.model.SalesAndTrafficByDate;
-import agency.amazon.test.model.SalesAndTrafficReport;
+import agency.amazon.test.batch.dto.SalesAndTrafficReport;
 import agency.amazon.test.repository.SalesAndTrafficByAsinRepository;
 import agency.amazon.test.repository.SalesAndTrafficByDateRepository;
 import lombok.RequiredArgsConstructor;

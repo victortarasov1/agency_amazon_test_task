@@ -4,7 +4,7 @@ import agency.amazon.test.batch.dto.ReaderConfigHolder;
 import agency.amazon.test.batch.exception.UnknownFileTypeException;
 import agency.amazon.test.batch.reader.Reader;
 import agency.amazon.test.batch.writer.ReportWriter;
-import agency.amazon.test.model.SalesAndTrafficReport;
+import agency.amazon.test.batch.dto.SalesAndTrafficReport;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
