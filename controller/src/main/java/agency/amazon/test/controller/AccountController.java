@@ -27,5 +27,16 @@ public class AccountController {
         return service.getAccount(principal.getName());
     }
 
+    @DeleteMapping("/delete")
+    @PreAuthorize("hasRole('ROLE_USER')")
+    public void delete(Principal principal) {
+        service.remove(principal.getName());
+    }
+
+    @PatchMapping("/update")
+    @PreAuthorize("hasRole('ROLE_USER')")
+    public void update(Principal principal, @RequestBody @Valid AccountWithDetailsDto dto) {
+        service.update(principal.getName(), dto);
+    }
 
 }

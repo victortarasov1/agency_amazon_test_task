@@ -9,4 +9,7 @@ public interface AccountService {
 
     AccountDto getAccount(String email);
 
+    void remove(String email);
+    void update(String oldEmail, AccountWithDetailsDto dto);
+
 }
