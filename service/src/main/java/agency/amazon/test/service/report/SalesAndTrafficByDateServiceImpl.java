@@ -1,4 +1,4 @@
-package agency.amazon.test.service;
+package agency.amazon.test.service.report;
 
 import agency.amazon.test.model.SalesAndTraffic;
 import agency.amazon.test.repository.SalesAndTrafficRepository;
@@ -11,17 +11,19 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class SalesAndTrafficByDateServiceImpl implements SalesAndTrafficByDateService {
+public class SalesAndTrafficByDateServiceImpl implements SalesAndTrafficService {
 
     private final SalesAndTrafficRepository repository;
 
     @Override
-    public List<SalesAndTraffic> findByDate(LocalDate date){
-        return repository.findById(date.toString()).map(List::of).orElseGet(List::of);
+    public List<SalesAndTraffic> findById(String date){
+        return repository.findById(date).map(List::of).orElseGet(List::of);
     }
 
     @Override
-    public List<SalesAndTraffic> findByDateRange(LocalDate startDate, LocalDate endDate) {
+    public List<SalesAndTraffic> findAllById(List<String> dateRange) {
+        var startDate = LocalDate.parse(dateRange.get(0));
+        var endDate = LocalDate.parse(dateRange.get(dateRange.size() -1));
         var dates = startDate.datesUntil(endDate.plusDays(1)).map(LocalDate::toString).toList();
         return repository.findAllById(dates);
     }
@@ -29,6 +31,11 @@ public class SalesAndTrafficByDateServiceImpl implements SalesAndTrafficByDateSe
     @Override
     public List<SalesAndTraffic> findAll() {
         return repository.findAll().stream().filter(this::isDateReport).toList();
+    }
+
+    @Override
+    public String getIdType() {
+        return "Date";
     }
 
     private boolean isDateReport(SalesAndTraffic salesAndTraffic) {

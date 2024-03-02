@@ -1,4 +1,4 @@
-package agency.amazon.test.service;
+package agency.amazon.test.service.report;
 
 import agency.amazon.test.model.SalesAndTraffic;
 import agency.amazon.test.repository.SalesAndTrafficRepository;
@@ -10,21 +10,26 @@ import java.time.format.DateTimeParseException;
 import java.util.List;
 @Service
 @RequiredArgsConstructor
-public class SalesAndTrafficByAsinServiceImpl implements SalesAndTrafficByAsinService {
+public class SalesAndTrafficByAsinServiceImpl implements SalesAndTrafficService {
     private final SalesAndTrafficRepository repository;
     @Override
-    public List<SalesAndTraffic> findByAsin(String asin) {
+    public List<SalesAndTraffic> findById(String asin) {
         return repository.findById(asin).map(List::of).orElseGet(List::of);
     }
 
     @Override
-    public List<SalesAndTraffic> findAsinList(List<String> asin) {
+    public List<SalesAndTraffic> findAllById(List<String> asin) {
         return repository.findAllById(asin);
     }
 
     @Override
     public List<SalesAndTraffic> findAll() {
         return repository.findAll().stream().filter(this::isAsinReport).toList();
+    }
+
+    @Override
+    public String getIdType() {
+        return "Asin";
     }
 
     private boolean isAsinReport(SalesAndTraffic salesAndTraffic) {
