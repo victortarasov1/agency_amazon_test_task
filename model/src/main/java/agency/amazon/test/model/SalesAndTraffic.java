@@ -11,6 +11,8 @@ public class SalesAndTraffic {
     @Id
     @JsonAlias({"date", "parentAsin"})
     private String id;
-    private Sales salesByAsin;
-    private Traffic trafficByAsin;
+    @JsonAlias({"salesByDate", "salesByAsin"})
+    private Sales sales;
+    @JsonAlias({"trafficByDate", "trafficByAsin"})
+    private Traffic traffic;
 }
