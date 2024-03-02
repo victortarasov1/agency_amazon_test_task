@@ -19,7 +19,7 @@ public class SalesAndTrafficFacadeImpl implements SalesAndTrafficFacade {
     }
 
     @Override
-    public List<SalesAndTraffic> findById(StatisticsReportDto dto) {
+    public SalesAndTraffic findById(StatisticsReportDto dto) {
         var service = getService(dto);
         return service.findById(dto.data().get(0));
     }
