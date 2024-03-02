@@ -34,6 +34,7 @@ allprojects {
 		testImplementation("org.springframework.boot:spring-boot-starter-test")
 		testImplementation("org.springframework.security:spring-security-test")
 		implementation("org.springframework.boot:spring-boot-starter-cache")
+		implementation("org.hibernate.validator:hibernate-validator:8.0.1.Final")
 		compileOnly("org.projectlombok:lombok")
 		annotationProcessor("org.projectlombok:lombok")
 		testImplementation("org.mockito:mockito-core:5.10.0")
