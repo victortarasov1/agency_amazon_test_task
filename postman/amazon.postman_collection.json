@@ -1,0 +1,368 @@
+{
+	"info": {
+		"_postman_id": "07b0e38b-ca64-424f-8d85-9ef6e7bc7484",
+		"name": "amazon",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24758496"
+	},
+	"item": [
+		{
+			"name": "add account",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\" : \"Viktor\",\n    \"surname\": \"Tarasov\",\n    \"email\": \"viktor@gmail.com\",\n    \"password\": \"111\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/account/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"account",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/login?email=viktor@gmail.com&password=111",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"login"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "viktor@gmail.com"
+						},
+						{
+							"key": "password",
+							"value": "111"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "refresh",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2YXN5YUBjb20iLCJleHAiOjE3MDkzNjAxMjF9.4VwRaA4FBmMX2l89zFgBiqnIl9lNTYCQ1kVZpE_i7y4",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/refresh",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"refresh"
+					],
+					"query": [
+						{
+							"key": "Authorization",
+							"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2YXN5YUBjb20iLCJleHAiOjE3MTAwMDMwMzR9.xLDpnA_tgHV1TOklovjva1WUplchN7-C49AAdNu_2qo",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get account",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aWt0b3JAZ21haWwuY29tIiwiZXhwIjoxNzA5MzgzMjM1LCJyb2xlcyI6WyJST0xFX1VTRVIiXX0.WSe5_3J1sdsrvY7thh4ji0h-eAMUHvDV3RzJm2sU0rY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/account/get",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"account",
+						"get"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find all dates",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2YXN5YUBjb20iLCJleHAiOjE3MDkzNzg4NjIsInJvbGVzIjpbIlJPTEVfVVNFUiJdfQ.EXHrVWXrEnRdFyzIZBr1VUr-mnH9IgpmxGjNDLz_2Lc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\" : \"Date\",\n    \"data\" : []\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/report/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"report",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find by date",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2YXN5YUBjb20iLCJleHAiOjE3MDkzODMwNjQsInJvbGVzIjpbIlJPTEVfVVNFUiJdfQ.smJj7qLpqcKTZF8_W4MMw6eOd62qBwJKrF-rtIyZEvc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\" : \"Date\",\n    \"data\" : [\n        \"2024-02-14\"\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/report/id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"report",
+						"id"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find by date range",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2YXN5YUBjb20iLCJleHAiOjE3MDkzNzg4NjIsInJvbGVzIjpbIlJPTEVfVVNFUiJdfQ.EXHrVWXrEnRdFyzIZBr1VUr-mnH9IgpmxGjNDLz_2Lc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\" : \"Date\",\n    \"data\" : [\n        \"2024-02-14\",\n        \"2024-02-16\"\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/report/range",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"report",
+						"range"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find all asins",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aWt0b3JAZ21haWwuY29tIiwiZXhwIjoxNzA5MzgzMzE1LCJyb2xlcyI6WyJST0xFX1VTRVIiXX0.mLqljskyv50kTdwZJfgQWDiNbcQSq57cRli7Ej7S9CQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\" : \"Asin\",\n    \"data\" : []\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/report/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"report",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find by asin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aWt0b3JAZ21haWwuY29tIiwiZXhwIjoxNzA5MzgzMzE1LCJyb2xlcyI6WyJST0xFX1VTRVIiXX0.mLqljskyv50kTdwZJfgQWDiNbcQSq57cRli7Ej7S9CQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\" : \"Asin\",\n    \"data\" : [\n        \"B07JWCZKSJ\"\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/report/id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"report",
+						"id"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find by asin range",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aWt0b3JAZ21haWwuY29tIiwiZXhwIjoxNzA5MzgzMzE1LCJyb2xlcyI6WyJST0xFX1VTRVIiXX0.mLqljskyv50kTdwZJfgQWDiNbcQSq57cRli7Ej7S9CQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"type\" : \"Asin\",\n    \"data\" : [\n        \"B07JWCZKSJ\",\n        \"B09ZDDDS1X\",\n        \"B0B14B89VH\"\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/report/range",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"report",
+						"range"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
