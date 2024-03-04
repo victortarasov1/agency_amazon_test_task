@@ -3,6 +3,7 @@ package agency.amazon.test.service.query;
 import agency.amazon.test.model.SalesAndTraffic;
 import agency.amazon.test.repository.SalesAndTrafficRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
@@ -20,6 +21,7 @@ public class GetAllDates implements Query {
     }
 
     @Override
+    @Cacheable(value = "findAll", key = "'date'")
     public String getType() {
         return "GET_SALES_AND_TRAFFIC_BY_ALL_DATES";
     }

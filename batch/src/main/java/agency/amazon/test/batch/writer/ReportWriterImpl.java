@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 public class ReportWriterImpl implements ReportWriter {
     private final SalesAndTrafficRepository salesAndTrafficRepository;
     @Override
-    @CacheEvict(value = "salesAndTraffic", allEntries = true)
+    @CacheEvict(value = {"findAll", "findByRange", "findByList"}, allEntries = true)
     public void saveToDb(SalesAndTrafficReport report) {
         salesAndTrafficRepository.saveAll(report.getSalesAndTrafficByDate());
         salesAndTrafficRepository.saveAll(report.getSalesAndTrafficByAsin());
