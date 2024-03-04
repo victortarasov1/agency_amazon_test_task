@@ -3,7 +3,7 @@ package agency.amazon.test.controller;
 
 import agency.amazon.test.dto.ReportQuery;
 import agency.amazon.test.model.SalesAndTraffic;
-import agency.amazon.test.service.SalesAndTrafficFacade;
+import agency.amazon.test.service.SalesAndTrafficQueryHandler;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -16,22 +16,10 @@ import java.util.List;
 @RequestMapping("/report")
 @PreAuthorize("hasRole('ROLE_USER')")
 public class SalesAndTrafficController {
+    private final SalesAndTrafficQueryHandler handler;
 
-    private final SalesAndTrafficFacade facade;
-
-    @PostMapping("/id")
-    public SalesAndTraffic findOne(@RequestBody @Valid ReportQuery dto) {
-        return facade.findById(dto);
+    @PostMapping
+    public List<SalesAndTraffic> findReport(@RequestBody @Valid ReportQuery query) {
+        return handler.executeQuery(query);
     }
-
-    @PostMapping("/range")
-    public List<SalesAndTraffic> findByRange(@RequestBody @Valid ReportQuery dto) {
-        return facade.findAllById(dto);
-    }
-
-    @PostMapping("/all")
-    public List<SalesAndTraffic> findAll(@RequestBody @Valid ReportQuery dto) {
-        return facade.findAll(dto);
-    }
-
 }
