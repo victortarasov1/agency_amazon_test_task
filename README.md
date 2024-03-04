@@ -67,17 +67,27 @@ If you don't have MongoDB installed locally, you can deploy it in a Docker conta
 4. **Delete Account**
     - `DELETE /account/delete`: Deletes the current user's account. (Requires authorization)
 
-### API for Retrieving Sales and Traffic Statistics
+# API for Retrieving Sales and Traffic Statistics
 
-1. **Get Statistics by Identifier**
-    - `POST /report/id`: Retrieves sales and traffic statistics based on the provided identifier, either by dates or by ASIN. (Requires authorization)
+## Get Statistics
 
-2. **Get Statistics by Date Range or ASIN**
-    - `POST /report/range`: Retrieves a list of sales and traffic statistics for the specified date range or ASIN list. (Requires authorization)
+- `POST /report`: Retrieves sales and traffic statistics based on the provided query.
 
-3. **Get Statistics for All ASINs and All Dates**
-    - `POST /report/all`: Retrieves a list of all available sales and traffic statistics for all ASINs or all dates. (Requires authorization)
+### Request Body
 
+```json
+{
+    "type": "",
+    "data": []
+}
+```
+### Request Types
+- "GET_SALES_AND_TRAFFIC_BY_ALL_ASINS": Retrieves statistics for all ASINs.
+- "GET_SALES_AND_TRAFFIC_BY_ALL_DATES": Retrieves statistics for all dates.
+- "GET_SALES_AND_TRAFFIC_BY_ASIN": Retrieves statistics for a specific ASIN.
+- "GET_SALES_AND_TRAFFIC_BY_DATE": Retrieves statistics for a specific date.
+- "GET_SALES_AND_TRAFFIC_BY_DATE_OR_ASIN_LIST": Retrieves statistics for a list of ASINs or dates.
+- "GET_SALES_AND_TRAFFIC_BY_DATE_RANGE": Retrieves statistics for a specific date range.
 ### API for User Authentication
 
 1. **Login**
