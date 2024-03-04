@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\" : \"Viktor\",\n    \"surname\": \"Tarasov\",\n    \"email\": \"viktor@gmail.com\",\n    \"password\": \"111\"\n}",
+					"raw": "{\n    \"name\" : \"Viktor\",\n    \"surname\": \"Tarasov\",\n    \"email\": \"viktor1111@gmail.com\",\n    \"password\": \"111\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -72,7 +72,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2YXN5YUBjb20iLCJleHAiOjE3MDkzNjAxMjF9.4VwRaA4FBmMX2l89zFgBiqnIl9lNTYCQ1kVZpE_i7y4",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aWt0b3JAZ21haWwuY29tIiwiZXhwIjoxNzA5NDM3MTY3fQ.4QX25LbQ4zSq4wVf1CLViF637lo2f-Se8ccue6t2TCU",
 							"type": "string"
 						}
 					]
@@ -108,7 +108,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aWt0b3JAZ21haWwuY29tIiwiZXhwIjoxNzA5MzgzMjM1LCJyb2xlcyI6WyJST0xFX1VTRVIiXX0.WSe5_3J1sdsrvY7thh4ji0h-eAMUHvDV3RzJm2sU0rY",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aWt0b3JAZ21haWwuY29tIiwiZXhwIjoxNzA5NDE5MTk3LCJyb2xlcyI6WyJST0xFX1VTRVIiXX0.5ypRQ022O5X8PmsUaUeVywshbBXmSM4zdwnc3OyJYDw",
 							"type": "string"
 						}
 					]
@@ -138,7 +138,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2YXN5YUBjb20iLCJleHAiOjE3MDkzNzg4NjIsInJvbGVzIjpbIlJPTEVfVVNFUiJdfQ.EXHrVWXrEnRdFyzIZBr1VUr-mnH9IgpmxGjNDLz_2Lc",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aWt0b3JAZ21haWwuY29tIiwiZXhwIjoxNzA5NTU2MjE3LCJyb2xlcyI6WyJST0xFX1VTRVIiXX0.GApjBxAEufg64XGmezbX7np1kltsIgKex1RQXfdNBig",
 							"type": "string"
 						}
 					]
@@ -147,7 +147,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"type\" : \"Date\",\n    \"data\" : []\n}",
+					"raw": "{\n    \"type\" : \"GET_SALES_AND_TRAFFIC_BY_ALL_DATES\",\n    \"data\" : []\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -155,15 +155,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/report/all",
+					"raw": "http://localhost:8080/report",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"report",
-						"all"
+						"report"
 					]
 				}
 			},
@@ -177,7 +176,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2YXN5YUBjb20iLCJleHAiOjE3MDkzODMwNjQsInJvbGVzIjpbIlJPTEVfVVNFUiJdfQ.smJj7qLpqcKTZF8_W4MMw6eOd62qBwJKrF-rtIyZEvc",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aWt0b3JAZ21haWwuY29tIiwiZXhwIjoxNzA5NTU2MjE3LCJyb2xlcyI6WyJST0xFX1VTRVIiXX0.GApjBxAEufg64XGmezbX7np1kltsIgKex1RQXfdNBig",
 							"type": "string"
 						}
 					]
@@ -186,7 +185,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"type\" : \"Date\",\n    \"data\" : [\n        \"2024-02-14\"\n    ]\n}",
+					"raw": "{\n    \"type\" : \"GET_SALES_AND_TRAFFIC_BY_DATE\",\n    \"data\" : [\n        \"2024-02-14\"\n    ]\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -194,15 +193,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/report/id",
+					"raw": "http://localhost:8080/report",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"report",
-						"id"
+						"report"
 					]
 				}
 			},
@@ -216,7 +214,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2YXN5YUBjb20iLCJleHAiOjE3MDkzNzg4NjIsInJvbGVzIjpbIlJPTEVfVVNFUiJdfQ.EXHrVWXrEnRdFyzIZBr1VUr-mnH9IgpmxGjNDLz_2Lc",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aWt0b3JAZ21haWwuY29tIiwiZXhwIjoxNzA5NTU2MjE3LCJyb2xlcyI6WyJST0xFX1VTRVIiXX0.GApjBxAEufg64XGmezbX7np1kltsIgKex1RQXfdNBig",
 							"type": "string"
 						}
 					]
@@ -225,7 +223,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"type\" : \"Date\",\n    \"data\" : [\n        \"2024-02-14\",\n        \"2024-02-16\"\n    ]\n}",
+					"raw": "{\n    \"type\" : \"GET_SALES_AND_TRAFFIC_BY_DATE_RANGE\",\n    \"data\" : [\n        \"2024-02-14\",\n        \"2024-02-17\"\n    ]\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -233,15 +231,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/report/range",
+					"raw": "http://localhost:8080/report",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"report",
-						"range"
+						"report"
 					]
 				}
 			},
@@ -255,7 +252,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aWt0b3JAZ21haWwuY29tIiwiZXhwIjoxNzA5MzgzMzE1LCJyb2xlcyI6WyJST0xFX1VTRVIiXX0.mLqljskyv50kTdwZJfgQWDiNbcQSq57cRli7Ej7S9CQ",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aWt0b3JAZ21haWwuY29tIiwiZXhwIjoxNzA5NTU2MjE3LCJyb2xlcyI6WyJST0xFX1VTRVIiXX0.GApjBxAEufg64XGmezbX7np1kltsIgKex1RQXfdNBig",
 							"type": "string"
 						}
 					]
@@ -264,7 +261,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"type\" : \"Asin\",\n    \"data\" : []\n}",
+					"raw": "{\n    \"type\" : \"GET_SALES_AND_TRAFFIC_BY_ALL_ASINS\",\n    \"data\" : []\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -272,15 +269,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/report/all",
+					"raw": "http://localhost:8080/report",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"report",
-						"all"
+						"report"
 					]
 				}
 			},
@@ -294,7 +290,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aWt0b3JAZ21haWwuY29tIiwiZXhwIjoxNzA5MzgzMzE1LCJyb2xlcyI6WyJST0xFX1VTRVIiXX0.mLqljskyv50kTdwZJfgQWDiNbcQSq57cRli7Ej7S9CQ",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aWt0b3JAZ21haWwuY29tIiwiZXhwIjoxNzA5NTU2MjE3LCJyb2xlcyI6WyJST0xFX1VTRVIiXX0.GApjBxAEufg64XGmezbX7np1kltsIgKex1RQXfdNBig",
 							"type": "string"
 						}
 					]
@@ -303,7 +299,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"type\" : \"Asin\",\n    \"data\" : [\n        \"B07JWCZKSJ\"\n    ]\n}",
+					"raw": "{\n    \"type\" : \"GET_SALES_AND_TRAFFIC_BY_ASIN\",\n    \"data\" : [\n        \"B07JWCZKSJ\"\n    ]\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -311,15 +307,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/report/id",
+					"raw": "http://localhost:8080/report",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"report",
-						"id"
+						"report"
 					]
 				}
 			},
@@ -333,7 +328,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aWt0b3JAZ21haWwuY29tIiwiZXhwIjoxNzA5MzgzMzE1LCJyb2xlcyI6WyJST0xFX1VTRVIiXX0.mLqljskyv50kTdwZJfgQWDiNbcQSq57cRli7Ej7S9CQ",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aWt0b3JAZ21haWwuY29tIiwiZXhwIjoxNzA5NTU2MjE3LCJyb2xlcyI6WyJST0xFX1VTRVIiXX0.GApjBxAEufg64XGmezbX7np1kltsIgKex1RQXfdNBig",
 							"type": "string"
 						}
 					]
@@ -342,7 +337,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"type\" : \"Asin\",\n    \"data\" : [\n        \"B07JWCZKSJ\",\n        \"B09ZDDDS1X\",\n        \"B0B14B89VH\"\n    ]\n}",
+					"raw": "{\n    \"type\" : \"GET_SALES_AND_TRAFFIC_BY_DATE_OR_ASIN_LIST\",\n    \"data\" : [\n        \"B07JWCZKSJ\",\n        \"B09ZDDDS1X\",\n        \"B0B14B89VH\"\n    ]\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -350,15 +345,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/report/range",
+					"raw": "http://localhost:8080/report",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"report",
-						"range"
+						"report"
 					]
 				}
 			},
@@ -372,7 +366,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aWt0b3IxQGdtYWlsLmNvbSIsImV4cCI6MTcwOTQwNDM0MCwicm9sZXMiOlsiUk9MRV9VU0VSIl19.yzC_Jd7yYTjWeQyLSZCCdKMLD3O_c271qP4gn2OZUeQ",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aWt0b3JAZ21haWwuY29tIiwiZXhwIjoxNzA5NDE5MTk3LCJyb2xlcyI6WyJST0xFX1VTRVIiXX0.5ypRQ022O5X8PmsUaUeVywshbBXmSM4zdwnc3OyJYDw",
 							"type": "string"
 						}
 					]
@@ -381,7 +375,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\" : \"Viktor\",\n    \"surname\": \"Tarasov\",\n    \"email\": \"viktor@gmail.com\",\n    \"password\": \"111\"\n}",
+					"raw": "{\n    \"name\" : \"Viktor\",\n    \"surname\": \"Tarasov\",\n    \"email\": \"viktor@gmail.com\",\n    \"password\": \"123\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -411,7 +405,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aWt0b3JAZ21haWwuY29tIiwiZXhwIjoxNzA5NDA0Mzg3LCJyb2xlcyI6WyJST0xFX1VTRVIiXX0.KgvUwsqSXJgYEPJYUH8Nd2hz0BpbRAuWnIW-ooa3AoY",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ2aWt0b3JAZ21haWwuY29tIiwiZXhwIjoxNzA5NDE5MjUyLCJyb2xlcyI6WyJST0xFX1VTRVIiXX0.FruMdk_e-6WA_9-UJbbESyTEsIQehAQ2OYQXPQKj7W4",
 							"type": "string"
 						}
 					]
