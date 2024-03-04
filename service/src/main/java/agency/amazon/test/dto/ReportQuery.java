@@ -5,7 +5,7 @@ import jakarta.validation.constraints.NotNull;
 
 import java.util.List;
 
-public record StatisticsReportDto(
+public record ReportQuery(
         @NotNull @NotEmpty String type,
         @NotNull List<String> data) {
 }
