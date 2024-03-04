@@ -1,7 +1,7 @@
 package agency.amazon.test.controller;
 
 
-import agency.amazon.test.dto.StatisticsReportDto;
+import agency.amazon.test.dto.ReportQuery;
 import agency.amazon.test.model.SalesAndTraffic;
 import agency.amazon.test.service.SalesAndTrafficFacade;
 import jakarta.validation.Valid;
@@ -20,17 +20,17 @@ public class SalesAndTrafficController {
     private final SalesAndTrafficFacade facade;
 
     @PostMapping("/id")
-    public SalesAndTraffic findOne(@RequestBody @Valid StatisticsReportDto dto) {
+    public SalesAndTraffic findOne(@RequestBody @Valid ReportQuery dto) {
         return facade.findById(dto);
     }
 
     @PostMapping("/range")
-    public List<SalesAndTraffic> findByRange(@RequestBody @Valid StatisticsReportDto dto) {
+    public List<SalesAndTraffic> findByRange(@RequestBody @Valid ReportQuery dto) {
         return facade.findAllById(dto);
     }
 
     @PostMapping("/all")
-    public List<SalesAndTraffic> findAll(@RequestBody @Valid StatisticsReportDto dto) {
+    public List<SalesAndTraffic> findAll(@RequestBody @Valid ReportQuery dto) {
         return facade.findAll(dto);
     }
 

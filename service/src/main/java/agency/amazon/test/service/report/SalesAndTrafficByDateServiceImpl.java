@@ -12,6 +12,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
+@Deprecated
 public class SalesAndTrafficByDateServiceImpl implements SalesAndTrafficService {
 
     private final SalesAndTrafficRepository repository;

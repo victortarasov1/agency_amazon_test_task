@@ -11,6 +11,7 @@ import java.time.format.DateTimeParseException;
 import java.util.List;
 @Service
 @RequiredArgsConstructor
+@Deprecated
 public class SalesAndTrafficByAsinServiceImpl implements SalesAndTrafficService {
     private final SalesAndTrafficRepository repository;
     @Override
