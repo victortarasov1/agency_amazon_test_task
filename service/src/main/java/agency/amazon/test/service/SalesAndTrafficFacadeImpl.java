@@ -2,7 +2,7 @@ package agency.amazon.test.service;
 
 import agency.amazon.test.dto.ReportQuery;
 import agency.amazon.test.model.SalesAndTraffic;
-import agency.amazon.test.exception.UnknownIdTypeException;
+import agency.amazon.test.exception.UnknownQueryTypeException;
 import agency.amazon.test.service.report.SalesAndTrafficService;
 import org.springframework.stereotype.Service;
 
@@ -39,7 +39,7 @@ public class SalesAndTrafficFacadeImpl implements SalesAndTrafficFacade {
 
     private SalesAndTrafficService getService(ReportQuery dto) {
         var service = services.get(dto.type());
-        if(service == null) throw new UnknownIdTypeException(dto.type());
+        if(service == null) throw new UnknownQueryTypeException(dto.type());
         return service;
     }
 }

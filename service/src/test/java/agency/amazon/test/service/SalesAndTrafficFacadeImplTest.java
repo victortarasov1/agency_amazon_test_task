@@ -1,7 +1,7 @@
 package agency.amazon.test.service;
 
 import agency.amazon.test.dto.ReportQuery;
-import agency.amazon.test.exception.UnknownIdTypeException;
+import agency.amazon.test.exception.UnknownQueryTypeException;
 import agency.amazon.test.service.report.SalesAndTrafficService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -38,7 +38,7 @@ class SalesAndTrafficFacadeImplTest {
         var id = "2024-02-14";
         var dto = new ReportQuery("ddf", List.of(id));
         assertThatThrownBy(() -> facade.findById(dto))
-                .isInstanceOf(UnknownIdTypeException.class);
+                .isInstanceOf(UnknownQueryTypeException.class);
     }
 
 
